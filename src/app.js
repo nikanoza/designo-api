@@ -8,7 +8,7 @@ import cors from "cors";
 import connect from "./database/mongo.js";
 import dotenv from "dotenv";
 dotenv.config();
-connect();
+// connect();
 
 const app = express();
 
