@@ -23,4 +23,4 @@ app.get("/", (req, res) => {
 app.get("/api/projects", getAllProject);
 app.get("/api/projects/web", getWebProjects);
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
