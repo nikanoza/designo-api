@@ -1,6 +1,8 @@
 import express from "express";
 import {
   getAllProject,
+  getAppProjects,
+  getGraphicProjects,
   getWebProjects,
 } from "./controllers/project-controller.js";
 import bodyParser from "body-parser";
@@ -8,7 +10,7 @@ import cors from "cors";
 import connect from "./database/mongo.js";
 import dotenv from "dotenv";
 dotenv.config();
-// connect();
+connect();
 
 const app = express();
 
@@ -22,5 +24,7 @@ app.get("/", (req, res) => {
 
 app.get("/api/projects", getAllProject);
 app.get("/api/projects/web", getWebProjects);
+app.get("/api/projects/app", getAppProjects);
+app.get("/api/projects/graphic", getGraphicProjects);
 
 app.listen(process.env.PORT || 3000);
